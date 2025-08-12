@@ -18,4 +18,4 @@ CREATE TABLE padeiro(
     CPF_padeiro VARCHAR(11) NOT NULL UNIQUE,
     telefone_padeiro VARCHAR(15) NOT NULL,
     created_at_padeiro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
