@@ -32,8 +32,10 @@ CREATE TABLE pedido (
     id_pedido INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente_fk INT NOT NULL,
     id_padeiro_fk INT NOT NULL,
+    id_produto_fk INT NOT NULL,
     data_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status_pedido ENUM('Pendente', 'Em Preparação', 'Pronto', 'Entregue') DEFAULT 'Pendente',
     FOREIGN KEY (id_cliente_fk) REFERENCES cliente(id_cliente),
-    FOREIGN KEY (id_padeiro_fk) REFERENCES padeiro(id_padeiro)
+    FOREIGN KEY (id_padeiro_fk) REFERENCES padeiro(id_padeiro),
+    FOREIGN KEY (id_produto_fk) REFERENCES produto(id_produto)
 );
