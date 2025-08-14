@@ -22,18 +22,18 @@ echo " <table borde = '1'>
                 <th> preço     </th>
                 <th> Descrição </th>
                 <th>           </th>
-            <tr>"
+            <tr>";
 while($row = $result -> fetch_assoc()){
     echo"<tr>
             <td>{$row[' nome_produto     |']}</td>
             <td>{$row[' preco_produto    ']}</td>
             <td>{$row[' descricao_produto']}</td>
             <button method='POST' type='submit'name='adicionar'>
-         </tr>"
+         </tr>";
 }
 
 }else{
-    echo "tem nada aqui não chefe" 
+    echo "tem nada aqui não chefe";
 }
 
 ?>
