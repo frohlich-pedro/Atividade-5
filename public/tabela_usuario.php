@@ -12,6 +12,17 @@
         <div class="card-body">
             <table class="table table-bordered table-striped">
 
+
+
+            <tbody>
+
+                <?php
+                $sql = 'SELECT * FROM cliente';
+                $cliente = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($cliente) > 0) {
+                foreach($cliente as $cliente) {
+                ?>
+
             <thead>
                 <tr>
                 <th>ID</th>
@@ -23,15 +34,7 @@
                 <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
 
-
-                <?php
-                $sql = 'SELECT * FROM cliente';
-                $cliente = mysqli_query($conn, $sql);
-                if (mysqli_num_rows($cliente) > 0) {
-                foreach($cliente as $cliente) {
-                ?>
 
                 <tr>
                 <td><?=$cliente['id_cliente']?></td>
@@ -54,7 +57,7 @@
                 <?php
                 }
                 } else {
-                echo '<h5>Nenhum usuário encontrado</h5>';
+                echo '<h4><strong>Nenhum usuário encontrado</strong></h4>';
                 }
                 ?>
 
