@@ -3,7 +3,10 @@
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+        $name  = $_POST['name'];
+        $email = $_POST['email'];
+        $tele  = $_POST['tele'];
+        $cpf   = $_POST['cpf'];
     if ($conn->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
     } else {
@@ -28,8 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="nome">Nome:</label>
         <input type="text" name= "nome" required>
         <br>
-        <label for="email">email::</label>
+        <label for="email">Email:</label>
         <input type="text" name= "email" required>
+        <br>
+        <label for="email">CPF:</label>
+        <input type="tel" name= "tele" required>
+        <br>
+        <label for="email">Telefone</label>
+        <input type="text" name= "cpf" required>
         <br>
         
         

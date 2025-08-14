@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $conn->close();
 }
 
-if($resulst -> num_rows >0){
+if($result -> num_rows >0){
 echo " <table borde = '1'>
             <tr>
                 <th> Produto   </th>
