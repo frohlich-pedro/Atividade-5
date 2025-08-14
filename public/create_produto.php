@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="preço">preço($/Kg)</label>
         <input type="text" name= "preço" required>
         <br>
-        <input type="submit" value = "adicionar produto">
+        <input type="submit" name = "adicionar produto">
         <br>
     </form>
 

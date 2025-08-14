@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     
-    <form Method="post" action ="create.php">
+    <form Method="POST" action ="create.php">
         <label for="nome">Nome:</label>
         <input type="text" name= "nome" required>
         <br>
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="email">Telefone</label>
         <input type="text" name= "cpf" required>
         <br>
-        
+        <input type="submit" name="Enviar">
         
     </form>
 

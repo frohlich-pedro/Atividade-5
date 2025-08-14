@@ -28,7 +28,7 @@ while($row = $result -> fetch_assoc()){
             <td>{$row[' nome_produto     |']}</td>
             <td>{$row[' preco_produto    ']}</td>
             <td>{$row[' descricao_produto']}</td>
-            <button method='POST' type='submit'name='adicionar'>
+            <button type='submit'name='adicionar'>
          </tr>";
 }
 
