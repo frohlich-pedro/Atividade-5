@@ -6,14 +6,14 @@
 	</a>
 
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" class="visually-hidden"> Active
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option1" autocomplete="off" class="visually-hidden" onclick="window.location.href='index.php'"> Usuários
   </label>
   <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off" class="visually-hidden"> Radio
+    <input type="radio" name="options" id="option2" autocomplete="off" class="visually-hidden" onclick="window.location.href='public/create_pedido.php'"> Produtos
   </label>
   <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off" class="visually-hidden"> Radio
+    <input type="radio" name="options" id="option3" autocomplete="off" class="visually-hidden" onclick="window.location.href='public/create_produto.php'"> Produtos
   </label>
 </div>
 
