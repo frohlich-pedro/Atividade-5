@@ -1,8 +1,8 @@
 <?php
 
-include 'read.php';
+include 'public/db.php';
 
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT * FROM cliente";
 
 $result = $conn->query($sql);
 
@@ -15,7 +15,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Visualizar Cadastros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/style.css">
   </head>
 
@@ -30,7 +30,7 @@ $result = $conn->query($sql);
             <div class="card-header">
 
               <h4> Lista de Clientes
-                <a href="/public/create_cliente.php" class="btn btn-primary float-end">Adicionar Cliente</a>
+                <a href="public/create_cliente.php" class="btn btn-outline-dark float-end">Adicionar Cliente</a>
               </h4>    
             </div>
 
@@ -42,7 +42,9 @@ $result = $conn->query($sql);
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
-                    <th>Data Nascimento</th>
+                    <th>Telefone</th>
+                    <th>CPF</th>
+                    <th>Data de Criação</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
@@ -51,16 +53,18 @@ $result = $conn->query($sql);
 
                   <?php
                   $sql = 'SELECT * FROM cliente';
-                  $cliente = mysqli_query($conexao, $sql);
+                  $cliente = mysqli_query($conn, $sql);
                   if (mysqli_num_rows($cliente) > 0) {
                     foreach($cliente as $cliente) {
                   ?>
 
                   <tr>
-                    <td><?=$cliente['id']?></td>
-                    <td><?=$cliente['nome']?></td>
-                    <td><?=$cliente['email']?></td>
-                    <td><?=date('d/m/Y', strtotime($cliente['data_nascimento']))?></td>
+                    <td><?=$cliente['id_cliente']?></td>
+                    <td><?=$cliente['nome_cliente']?></td>
+                    <td><?=$cliente['email_cliente']?></td>
+                    <td><?=$cliente['telefone_cliente']?></td>
+                    <td><?=$cliente['cpf_cliente']?></td>
+                    <td><?=$cliente['created_at_cliente']?></td>
                     <td>
 
                       <a href="cliente-edit.php?id=<?=$cliente['id']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
