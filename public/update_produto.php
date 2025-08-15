@@ -10,14 +10,14 @@
 
     if($_SERVER["REQUEST_METHOD"] == 'POST'){
         $name = $_POST['name'];
-        $email = $_POST['desc'];
-        $tele = $_POST['preco'];
+        $desc = $_POST['desc'];
+        $preco = $_POST['preco'];
 
         $sql = "UPDATE produto SET nome_produto='$name', descricao_produto='$desc', preco_produto='$preco' WHERE id_produto='$id_produto'";
         
         if($conn -> query($sql) === true){
             echo "Registro atualizado com sucesso!
-                <a href='../index.php'>Ver registros.</a>
+                <a href='tabela_produto.php'>Ver registros.</a>
 ";
         }else{
             echo"Erro " . $sql . "<br>" . $conn->error;
@@ -48,7 +48,7 @@
     <div class="container mt-5">
         <div class="card">
             <div class="card-header">
-            <h4>Editar Cliente</h4>
+            <h4>Editar Produto</h4>
             </div>
             <div class="card-body">
 
@@ -60,7 +60,7 @@
 
                 <div class="mb-3">
                 <label class="form-label">Preço(R$)</label>
-                <input type="email" name="preco" class="form-control" value="<?php echo $row['preco_produto'];?>" required>
+                <input type="number" step="0.01" name="preco" class="form-control" value="<?php echo $row['preco_produto'];?>" required>
                 </div>
 
                 <div class="mb-3">
@@ -69,7 +69,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-success">Salvar</button>
-                <a href="../index.php" class="btn btn-secondary">Cancelar</a>
+                <a href="tabela_produto.php" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
     </div>
