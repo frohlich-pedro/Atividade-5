@@ -42,7 +42,7 @@ $result = $conn->query($sql);
                     <tr>
                     <th>ID</th>
                     <th>Produto</th>
-                    <th>Preço</th>
+                    <th>Preço(R$/unidade)</th>
                     <th>Descrição</th>
                     <th>Data de Criação</th>
                     <th>Ações</th>

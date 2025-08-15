@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($conn->query($sql) === true) {
             echo "Registro criado com sucesso!
-            <a href='../index.php'>Ver registros.</a>";    } else {
+            <a href='tabela_produto.php'>Ver registros.</a>";    } else {
         echo "Erro: " . $conn->error;
     }
 
