@@ -43,7 +43,6 @@ $result = $conn->query($sql);
                     <th>ID</th>
                     <th>Produto</th>
                     <th>Preço</th>
-                    <th>Telefone</th>
                     <th>Descrição</th>
                     <th>Data de Criação</th>
                     <th>Ações</th>
