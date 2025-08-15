@@ -20,7 +20,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="styles/style.css">
   </head>
 
-<body>
+  <body style="background-color: #ddddddff;">
 
         <?php include 'navbar_interno.php'; ?>
 
@@ -69,9 +69,9 @@ $result = $conn->query($sql);
                     <td><?=$produto['created_at_produto']?></td>
                     <td>
 
-                    <a href="public/update_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
+                    <a href="public/update_produto.php?id_produto=<?=$produto['id_produto']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
 
-                    <a href="public/delete_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" onclick=" return confirm('Tem certeza que deseja excluir?')" 
+                    <a href="public/delete_produto.php?id_produto=<?=$produto['id_produto']?>" onclick=" return confirm('Tem certeza que deseja excluir?')" 
                     class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;Excluir</a>
                     </td>
                     </tr>
