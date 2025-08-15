@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     if ($conn->query($sql) === true) {
-        echo "Novo produto criado com sucesso.";
-    } else {
+            echo "Registro criado com sucesso!
+            <a href='../index.php'>Ver registros.</a>";    } else {
         echo "Erro: " . $conn->error;
     }
 
@@ -22,28 +22,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <form Method="POST" action ="create_produto.php">
-        <label for="name">Nome:</label>
-        <input type="text" name= "name" required>
-        <br>
-        <label for="desc">Descrição</label>
-        <input type="text" name= "desc" required>
-        <br>
-        <label for="preco">preço($/Kg)</label>
-        <input type="text" name= "preco" required>
-        <br>
-        <input type="submit" name = "adicionar produto">
-        <br>
-    </form>
 
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editar Cliente</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+
+
+<body style="background-color:#ddddddff;">
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+            <h4>Criar Produto</h4>
+            </div>
+            <div class="card-body">
+
+            <form method="POST">
+                <div class="mb-3">
+                <label class="form-label">Produto</label>
+                <input type="text" name= "name" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label">Descrição</label>
+                <input type="text" name= "desc" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                <label class="form-label">Preço(R$)</label>
+                <input type="number" step="0.01" name= "preco" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-success">Criar</button>
+                <a href="../index.php" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
