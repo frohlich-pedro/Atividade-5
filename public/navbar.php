@@ -13,7 +13,7 @@
     <input type="radio" name="options" id="option2" autocomplete="off" class="visually-hidden" onclick="window.location.href='public/tabela_produto.php'"> Produtos
   </label>
   <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off" class="visually-hidden" onclick="window.location.href='public/tabela_produto.php'"> Pedidos
+    <input type="radio" name="options" id="option3" autocomplete="off" class="visually-hidden" onclick="window.location.href='public/tabela_pedido.php'"> Pedidos
   </label>
 </div>
 

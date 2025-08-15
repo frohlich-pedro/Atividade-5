@@ -20,7 +20,7 @@ $result = $conn->query($sql);
   </head>
 
 
-  <body>
+  <body style="background-color: #ddddddff;">
     <?php 
     include('public/navbar.php'); 
     include('public/tabela_usuario.php');

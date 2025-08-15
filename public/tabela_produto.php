@@ -81,7 +81,7 @@ $result = $conn->query($sql);
                     <?php
                     }
                     } else {
-                    echo '<h4><strong>Nenhum Produto encontrado</strong></h4>';
+                    echo '<h4><strong>Nenhum PRODUTO encontrado</strong></h4>';
                     }
                     ?>
 

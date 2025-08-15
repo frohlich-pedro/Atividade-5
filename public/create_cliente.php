@@ -3,10 +3,15 @@
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name  = $_POST['name'];
+        $name  = $_POST['nome'];
         $email = $_POST['email'];
         $tele  = $_POST['tele'];
         $cpf   = $_POST['cpf'];
+
+        $sql = "INSERT INTO cliente (nome_cliente, email_cliente, telefone_cliente, cpf_cliente) 
+        VALUES ('$name', '$email', '$tele', '$cpf')";
+
+
     if ($conn->query($sql) === true) {
         echo "Novo registro criado com sucesso.";
     } else {
@@ -23,11 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adicionar Cliente</title>
 </head>
 <body>
     
-    <form Method="POST" action ="create.php">
+    <form Method="POST" action ="create_cliente.php">
         <label for="nome">Nome:</label>
         <input type="text" name= "nome" required>
         <br>

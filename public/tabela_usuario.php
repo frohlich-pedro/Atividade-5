@@ -12,17 +12,6 @@
         <div class="card-body">
             <table class="table table-bordered table-striped">
 
-
-
-            <tbody>
-
-                <?php
-                $sql = 'SELECT * FROM cliente';
-                $cliente = mysqli_query($conn, $sql);
-                if (mysqli_num_rows($cliente) > 0) {
-                foreach($cliente as $cliente) {
-                ?>
-
             <thead>
                 <tr>
                 <th>ID</th>
@@ -35,6 +24,17 @@
                 </tr>
             </thead>
 
+            <tbody>
+
+                <?php
+                $sql = 'SELECT * FROM cliente';
+                $cliente = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($cliente) > 0) {
+                foreach($cliente as $cliente) {
+                ?>
+
+
+
 
                 <tr>
                 <td><?=$cliente['id_cliente']?></td>
@@ -44,20 +44,17 @@
                 <td><?=$cliente['cpf_cliente']?></td>
                 <td><?=$cliente['created_at_cliente']?></td>
                 <td>
-
-                    <a href="cliente-edit.php?id=<?=$cliente['id']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
-                    <form action="update.php" method="POST" class="d-inline">
-                    <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_cliente" value="<?=$cliente['id_cliente']?>" class="btn btn-danger btn-sm">
-                        <span class="bi-trash3-fill"></span>&nbsp;Excluir
-                    </button>
-                    </form>
+                    <a href="public/update.php?id=<?=$cliente['id_cliente']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar
+                    </a>
+                    <a href="public/delete_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" onclick=" return confirm('Tem certeza que deseja excluir?')" class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;Excluir
+                    </a>
                 </td>
                 </tr>
         
                 <?php
                 }
                 } else {
-                echo '<h4><strong>Nenhum usuário encontrado</strong></h4>';
+                echo '<h4><strong>Nenhum USUÁRIO encontrado</strong></h4>';
                 }
                 ?>
 
