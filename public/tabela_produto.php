@@ -38,6 +38,17 @@ $result = $conn->query($sql);
             <div class="card-body">
                 <table class="table table-bordered table-striped">
 
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Telefone</th>
+                    <th>Descrição</th>
+                    <th>Data de Criação</th>
+                    <th>Ações</th>
+                    </tr>
+                </thead>
 
                 <tbody>
 
@@ -49,17 +60,7 @@ $result = $conn->query($sql);
                     foreach($produto as $produto) {
                     ?>
 
-                <thead>
-                    <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Telefone</th>
-                    <th>Descrição</th>
-                    <th>Data de Criação</th>
-                    <th>Ações</th>
-                    </tr>
-                </thead>
+
 
                     <tr>
                     <td><?=$produto['id_produto']?></td>
@@ -69,12 +70,10 @@ $result = $conn->query($sql);
                     <td><?=$produto['created_at_produto']?></td>
                     <td>
 
-                        <a href="cliente-edit.php?id=<?=$produto['id']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
-                        <form action="update.php" method="POST" class="d-inline">
-                        <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_cliente" value="<?=$produto['id_produto']?>" class="btn btn-danger btn-sm">
-                            <span class="bi-trash3-fill"></span>&nbsp;Excluir
-                        </button>
-                        </form>
+                    <a href="public/update_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
+
+                    <a href="public/delete_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" onclick=" return confirm('Tem certeza que deseja excluir?')" 
+                    class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;Excluir</a>
                     </td>
                     </tr>
             
