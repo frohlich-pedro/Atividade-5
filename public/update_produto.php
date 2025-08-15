@@ -2,19 +2,18 @@
 
     include 'db.php';
 
-    $id_cliente = $_GET['id_cliente'];
+    $id_produto = $_GET['id_produto'];
 
-    $sql = "SELECT * FROM cliente WHERE id_cliente='$id_cliente'";
+    $sql = "SELECT * FROM produto WHERE id_produto='$id_produto'";
     $result = $conn -> query($sql);
     $row = $result -> fetch_assoc();
 
     if($_SERVER["REQUEST_METHOD"] == 'POST'){
-        $name = $_POST['nome'];
-        $email = $_POST['email'];
-        $tele = $_POST['tele'];
-        $cpf = $_POST['cpf'];
+        $name = $_POST['name'];
+        $email = $_POST['desc'];
+        $tele = $_POST['preco'];
 
-        $sql = "UPDATE cliente SET nome_cliente='$name', email_cliente='$email', telefone_cliente='$tele', cpf_cliente='$cpf' WHERE id_cliente='$id_cliente'";
+        $sql = "UPDATE produto SET nome_produto='$name', descricao_produto='$desc', preco_produto='$preco' WHERE id_produto='$id_produto'";
         
         if($conn -> query($sql) === true){
             echo "Registro atualizado com sucesso!
@@ -55,23 +54,18 @@
 
             <form method="POST">
                 <div class="mb-3">
-                <label class="form-label">Nome</label>
-                <input type="text" name="nome" class="form-control" value="<?php echo $row['nome_cliente'];?>" required>
+                <label class="form-label">Produto</label>
+                <input type="text" name="name" class="form-control" value="<?php echo $row['nome_produto'];?>" required>
                 </div>
 
                 <div class="mb-3">
-                <label class="form-label">Email</label>
-                <input type="email" name="email" class="form-control" value="<?php echo $row['email_cliente'];?>" required>
+                <label class="form-label">Preço(R$)</label>
+                <input type="email" name="preco" class="form-control" value="<?php echo $row['preco_produto'];?>" required>
                 </div>
 
                 <div class="mb-3">
-                <label class="form-label">Telefone</label>
-                <input type="text" name="tele" class="form-control" value="<?php echo $row['telefone_cliente'];?>" required>
-                </div>
-
-                <div class="mb-3">
-                <label class="form-label">CPF</label>
-                <input type="text" name="cpf" class="form-control" value="<?php echo $row['cpf_cliente'];?>" required>
+                <label class="form-label">Descrição</label>
+                <input type="text" name="desc" class="form-control" value="<?php echo $row['descricao_produto'];?>" required>
                 </div>
 
                 <button type="submit" class="btn btn-success">Salvar</button>
