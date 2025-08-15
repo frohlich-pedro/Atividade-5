@@ -6,7 +6,7 @@ if (!isset($_GET['id_pedido']) || !is_numeric($_GET['id_pedido'])) {
     exit;
 }
 
-$id_cliente = (int) $_GET['id_pedido'];
+$id_pedido = (int) $_GET['id_pedido'];
 
 $sql = "DELETE FROM pedido WHERE id_pedido = $id_pedido";
 
