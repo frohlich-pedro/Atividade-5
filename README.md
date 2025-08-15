@@ -15,13 +15,33 @@ O objetivo é criar uma aplicação web que aborda conceitos fundamentais de pro
 ## Estrutura do Projeto
 
 ```
-/Atividade-5
-├── index.php
+/ATIVIDADE-5
 ├── assets/
-│   ├── css/
-│   └── js/
-├── README.md
-└── ...
+│   └── icon/
+│       └── pao.png
+├── public/
+│   ├── create_cliente.php
+│   ├── create_pedido.php
+│   ├── create_produto.php
+│   ├── db.php
+│   ├── delete_cliente.php
+│   ├── delete_pedido.php
+│   ├── delete_produto.php
+│   ├── navbar_interno.php
+│   ├── navbar.php
+│   ├── read.php
+│   ├── tabela_pedido.php
+│   ├── tabela_produto.php
+│   ├── tabela_usuario.php
+│   ├── update_cliente.php
+│   └── update_produto.php
+├── styles/
+│   └── style.css
+├── index.php
+├── insert_padeiro.sql
+├── paodango.sql
+├── license
+└── README.md
 ```
 
 ## Como Executar
@@ -34,12 +54,13 @@ O objetivo é criar uma aplicação web que aborda conceitos fundamentais de pro
 
 - Interface amigável para o usuário
 - Manipulação de dados via formulários
-- Integração com banco de dados (se aplicável)
+- Integração com banco de dados
 - Validação de dados
+- Gerenciamento de Pedidos
 
 ## Contribuição
 
-Sinta-se à vontade para abrir issues ou enviar pull requests.
+Sinta-se à vontade para abrir issues :).
 
 ## Licença
 
