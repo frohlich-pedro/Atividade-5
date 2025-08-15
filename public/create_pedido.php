@@ -5,6 +5,9 @@ include 'db.php';
 $id_cliente = 1;
 $id_padeiro = 1;
 $sql = "SELECT * FROM produto";
+$sql_pedido = "SELECT * FROM pedido";
+$result1 = $conn ->query($sql_pedido);
+
 $result = $conn ->query($sql);
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id_produto'])) {
     $id_produto = $_POST['id_produto'];
@@ -40,6 +43,22 @@ while($row = $result -> fetch_assoc()){
                     <button type='submit'>Adicionar ao Pedido</button>
                 </form>
             </td>
+         </tr>"
+         ;
+}
+}
+if($result1 -> num_rows >0){
+echo " <table borde = '1'>
+            <tr>
+                <th> cliente </th>
+                <th> padeiro </th>
+                <th> produto </th>
+            <tr>";
+while($row = $result1 -> fetch_assoc()){
+    echo"<tr>
+            <td>{$row['id_cliente_fk']}</td>
+            <td>{$row['id_padeiro_fk']}</td>
+            <td>{$row['id_produto_fk']}</td>
          </tr>";
 }
 
