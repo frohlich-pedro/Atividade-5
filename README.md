@@ -64,4 +64,4 @@ Sinta-se à vontade para abrir issues :).
 
 ## Licença
 
-Este projeto é apenas para fins educacionais.
+MIT License.
