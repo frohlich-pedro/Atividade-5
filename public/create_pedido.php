@@ -32,7 +32,7 @@ echo " <table borde = '1'>
 while($row = $result -> fetch_assoc()){
     echo"<tr>
             <td>{$row['nome_produto']     }</td>
-            <td>{$row['preco_produto']    }</td>
+            <td>{$row['p.+co_produto']    }</td>
             <td>{$row['descricao_produto']}</td>
             <td>
                 <form method='POST'>
