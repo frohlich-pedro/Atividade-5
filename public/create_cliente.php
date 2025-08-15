@@ -3,10 +3,10 @@
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $name  = $_POST['nome'];
-        $email = $_POST['email'];
-        $tele  = $_POST['tele'];
-        $cpf   = $_POST['cpf'];
+        $name = trim($_POST['nome']);
+        $email = trim($_POST['email']);
+        $tele = trim($_POST['tele']);
+        $cpf = trim($_POST['cpf']);
 
         $sql = "INSERT INTO cliente (nome_cliente, email_cliente, telefone_cliente, cpf_cliente) 
         VALUES ('$name', '$email', '$tele', '$cpf')";

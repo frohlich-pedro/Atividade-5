@@ -44,10 +44,11 @@
                 <td><?=$cliente['cpf_cliente']?></td>
                 <td><?=$cliente['created_at_cliente']?></td>
                 <td>
-                    <a href="public/update.php?id=<?=$cliente['id_cliente']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar
-                    </a>
-                    <a href="public/delete_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" onclick=" return confirm('Tem certeza que deseja excluir?')" class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;Excluir
-                    </a>
+                    <a href="public/update_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
+
+                    <a href="public/delete_cliente.php?id_cliente=<?=$cliente['id_cliente']?>" onclick=" return confirm('Tem certeza que deseja excluir?')" 
+                    class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;Excluir</a>
+                    
                 </td>
                 </tr>
         
