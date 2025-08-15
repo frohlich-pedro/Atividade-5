@@ -67,10 +67,12 @@ $result = $conn->query($sql);
                     <td><?=$pedido['id_cliente_fk']?></td>
                     <td><?=$pedido['id_padeiro_fk']?></td>
                     <td><?=$pedido['id_produto_fk']?></td>
-                    <td><?=$pedido['created_at_produto']?></td>
+                    <td><?=$pedido['data_pedido']?></td>
                     <td><?=$pedido['status_pedido']?></td>
                     
                     <td>
+
+                    <a href="update_status.php?id_pedido=<?=$pedido['id_pedido']?>" class="btn btn-success btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
 
                     <a href="delete_pedido.php?id_pedido=<?=$pedido['id_pedido']?>" onclick=" return confirm('Tem certeza que deseja excluir?')" 
                     class="btn btn-danger btn-sm"><span class="bi-trash3-fill"></span>&nbsp;Excluir</a>
